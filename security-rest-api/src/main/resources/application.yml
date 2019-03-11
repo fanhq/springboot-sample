@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    password:
+    hikari:
+      minimum-idle: 0
+  tomcat:
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+  jpa:
+    show-sql: false
+
+
