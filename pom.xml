@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>security-rest-api</module>
+        <module>springboot-grpc</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
