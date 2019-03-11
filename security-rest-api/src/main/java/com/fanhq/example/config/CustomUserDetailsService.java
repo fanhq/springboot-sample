@@ -29,6 +29,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        /**
+         * 自定义实现user创建
+         */
         User user = userService.findByUsername(username);
         CustomUserDetail.UserBuilder builder = CustomUserDetail.builder();
         builder.username(user.getUsername());
