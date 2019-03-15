@@ -6,6 +6,7 @@ import com.fanhq.example.entity.User;
 import com.fanhq.example.service.IUserService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,16 +17,27 @@ import java.util.List;
 public class UserServiceImpl implements IUserService {
     @Override
     public User findByUsername(String username) {
-        return null;
+        User user = new User();
+        user.setUsername("fanhaiqiu");
+        user.setPassword("fanhaiqiu");
+        return user;
     }
 
     @Override
     public List<Role> getRoles(int userId) {
-        return null;
+        Role role = new Role();
+        role.setRoleName("USER");
+        List<Role> roles = new ArrayList<>();
+        roles.add(role);
+        return roles;
     }
 
     @Override
     public List<Authority> getAuthorities(int roleId) {
-        return null;
+        Authority auth = new Authority();
+        auth.setAuthorityName("QUERY");
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(auth);
+        return authorities;
     }
 }
