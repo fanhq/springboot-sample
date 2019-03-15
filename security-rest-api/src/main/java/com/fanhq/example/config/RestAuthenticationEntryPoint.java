@@ -11,6 +11,7 @@ import java.io.IOException;
 /**
  * @author fanhaiqiu
  * @date 2019/2/25
+ * 防止formlogin时候通过LoginUrlAuthenticationEntryPoint重定向到登陆界面上
  */
 
 @Component

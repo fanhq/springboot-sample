@@ -18,6 +18,7 @@ import java.io.IOException;
  * @date 2019/2/25
  *
  * removes the redirect logic
+ * rest服务登陆成功后只会返回token，不再重定向到某个页面
  */
 @Component
 public class CustomAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
