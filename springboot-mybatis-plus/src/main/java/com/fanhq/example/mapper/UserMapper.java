@@ -8,4 +8,5 @@ import com.fanhq.example.entity.User;
  * @date 2019/3/22
  */
 public interface UserMapper extends BaseMapper<User> {
+
 }
