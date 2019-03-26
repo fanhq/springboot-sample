@@ -1,9 +1,8 @@
-package com.fanhq.example.service.impl;
+package com.fanhq.example.service;
 
 import com.fanhq.example.entity.Authority;
 import com.fanhq.example.entity.Role;
 import com.fanhq.example.entity.User;
-import com.fanhq.example.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
