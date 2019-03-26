@@ -1,6 +1,5 @@
 package com.fanhq.example.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.fanhq.example.Application;
 import com.fanhq.example.entity.User;
 import com.fanhq.example.mapper.UserMapper;
@@ -10,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
-
 /**
  * @author fanhaiqiu
  * @date 2019/3/25
@@ -20,8 +17,8 @@ import javax.annotation.Resource;
 @SpringBootTest(classes = Application.class)
 public class UserServiceImplTest {
 
-    @Resource
-    private IService<User> userService;
+    @Autowired
+    private IUserService userService;
 
     @Autowired
     private UserMapper userMapper;
