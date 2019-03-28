@@ -18,7 +18,7 @@ public class UserServiceImpl implements IUserService {
     public User findByUsername(String username) {
         User user = new User();
         user.setUsername("fanhaiqiu");
-        user.setPassword("fanhaiqiu");
+        user.setPassword("123@abc");
         return user;
     }
 
