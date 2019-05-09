@@ -1,5 +1,6 @@
 package com.fanhq.example;
 
+import com.fanhq.example.entity.OrderEntity;
 import com.fanhq.example.repository.OrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +32,14 @@ public class ApplicationTest {
 
     @Test
     public void orderTest(){
-
+        for (long i = 1; i <= 40L; i++) {
+            OrderEntity order = new OrderEntity();
+            order.setId((i));
+            order.setUserId(i + 1);
+            order.setStatus("ordered");
+            orderRepository.save(order);
+        }
+        assert true;
     }
 
 }
