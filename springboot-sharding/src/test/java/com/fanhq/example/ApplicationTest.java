@@ -2,6 +2,7 @@ package com.fanhq.example;
 
 import com.fanhq.example.entity.OrderEntity;
 import com.fanhq.example.repository.OrderRepository;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
+import java.util.List;
 
 /**
  * @author fanhaiqiu
@@ -40,6 +42,12 @@ public class ApplicationTest {
             orderRepository.save(order);
         }
         assert true;
+    }
+
+    @Test
+    public void queryTest(){
+        List<OrderEntity> orders = orderRepository.findAll();
+        assert CollectionUtils.isNotEmpty(orders);
     }
 
 }
