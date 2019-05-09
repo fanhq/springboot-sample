@@ -50,4 +50,10 @@ public class ApplicationTest {
         assert CollectionUtils.isNotEmpty(orders);
     }
 
+    @Test
+    public void likeTest(){
+        List<OrderEntity> orders = orderRepository.findByStatusIsLike("%order%");
+        assert CollectionUtils.isNotEmpty(orders);
+    }
+
 }
