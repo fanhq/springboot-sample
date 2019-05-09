@@ -17,12 +17,21 @@ public interface GoodsRepository extends JpaRepository<GoodsEntity, Long> {
      * @param goodsId2
      * @return
      */
-    List<GoodsEntity> findAllByIdBetween(Long goodsId1,Long goodsId2);
+    List<GoodsEntity> findAllByIdBetween(Long goodsId1, Long goodsId2);
 
     /**
      * 查询
+     *
      * @param goodsIds
      * @return
      */
     List<GoodsEntity> findAllByIdIn(List<Long> goodsIds);
+
+
+    /**
+     * 模糊查询
+     * @param pattern
+     * @return
+     */
+    List<GoodsEntity> findByNameIsLike(String pattern);
 }

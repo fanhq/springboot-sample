@@ -65,4 +65,9 @@ public class ApplicationTest {
         assert CollectionUtils.isEmpty(goods);
     }
 
+    @Test
+    public void query3() {
+        List<GoodsEntity> goods = goodsRepository.findByNameIsLike("%shop%");
+        assert CollectionUtils.isEmpty(goods);
+    }
 }
