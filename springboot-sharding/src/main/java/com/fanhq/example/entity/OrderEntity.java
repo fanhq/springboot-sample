@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="order")
+@Table(name="t_order")
 @Data
 public class OrderEntity {
 
