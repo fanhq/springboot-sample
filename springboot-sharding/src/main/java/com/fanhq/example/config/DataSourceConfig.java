@@ -53,8 +53,8 @@ public class DataSourceConfig {
         DataSourceRule dataSourceRule = new DataSourceRule(dataSourceMap, database0Config.getDatabaseName());
 
         //分表设置，大致思想就是将查询虚拟表Goods根据一定规则映射到真实表中去
-        TableRule orderTableRule = TableRule.builder("goods")
-                .actualTables(Arrays.asList("goods_0", "goods_1"))
+        TableRule orderTableRule = TableRule.builder("t_goods")
+                .actualTables(Arrays.asList("t_goods_0", "t_goods_1"))
                 .dataSourceRule(dataSourceRule)
                 .build();
 

@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="goods")
+@Table(name="t_goods")
 @Data
 public class GoodsEntity {
 

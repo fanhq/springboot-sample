@@ -26,7 +26,7 @@ public class ApplicationTest {
 
 
     @Test
-    public void orderTest() {
+    public void goodsTest() {
         for (long i = 1; i <= 40L; i++) {
             GoodsEntity goods = new GoodsEntity();
             goods.setId((i));
