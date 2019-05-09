@@ -12,14 +12,12 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="goods")
+@Table(name="order")
 @Data
-public class GoodsEntity {
+public class OrderEntity {
 
     @Id
-    private Long id;
-
-    private String name;
-
-    private Long type;
+    private long id;
+    private long userId;
+    private String status;
 }
