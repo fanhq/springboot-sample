@@ -17,9 +17,9 @@ import javax.persistence.Table;
 public class GoodsEntity {
 
     @Id
-    private Long goodsId;
+    private Long Id;
 
-    private String goodsName;
+    private String name;
 
-    private Long goodsType;
+    private Long type;
 }

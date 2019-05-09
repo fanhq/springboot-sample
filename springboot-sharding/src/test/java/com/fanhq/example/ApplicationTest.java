@@ -23,11 +23,11 @@ public class ApplicationTest {
 
     @Test
     public void orderTest() {
-        for(int i= 1 ; i <= 40 ; i ++){
+        for (long i = 1; i <= 40L; i++) {
             GoodsEntity goods = new GoodsEntity();
-            goods.setGoodsId((long) i);
-            goods.setGoodsName( "shangpin" + i);
-            goods.setGoodsType((long) (i+1));
+            goods.setId((i));
+            goods.setName("shopping" + i);
+            goods.setType(i + 1);
             goodsRepository.save(goods);
         }
         assert true;
