@@ -16,16 +16,19 @@ import java.util.LinkedHashSet;
 @Component
 public class DatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgorithm<Long> {
 
+    private static final long RANGE = 20L;
+
     @Autowired
     private Database0Config database0Config;
 
     @Autowired
     private Database1Config database1Config;
 
+
     @Override
     public String doEqualSharding(Collection<String> availableTargetNames, ShardingValue<Long> shardingValue) {
         Long value = shardingValue.getValue();
-        if (value <= 20L) {
+        if (value <= RANGE) {
             return database0Config.getDatabaseName();
         } else {
             return database1Config.getDatabaseName();
@@ -36,7 +39,7 @@ public class DatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgor
     public Collection<String> doInSharding(Collection<String> availableTargetNames, ShardingValue<Long> shardingValue) {
         Collection<String> result = new LinkedHashSet<>(availableTargetNames.size());
         for (Long value : shardingValue.getValues()) {
-            if (value <= 20L) {
+            if (value <= RANGE) {
                 result.add(database0Config.getDatabaseName());
             } else {
                 result.add(database1Config.getDatabaseName());
@@ -51,7 +54,7 @@ public class DatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgor
         Collection<String> result = new LinkedHashSet<>(availableTargetNames.size());
         Range<Long> range = shardingValue.getValueRange();
         for (Long value = range.lowerEndpoint(); value <= range.upperEndpoint(); value++) {
-            if (value <= 20L) {
+            if (value <= RANGE) {
                 result.add(database0Config.getDatabaseName());
             } else {
                 result.add(database1Config.getDatabaseName());

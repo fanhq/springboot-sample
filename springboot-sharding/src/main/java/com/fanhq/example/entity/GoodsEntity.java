@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class GoodsEntity {
 
     @Id
-    private Long Id;
+    private Long id;
 
     private String name;
 
