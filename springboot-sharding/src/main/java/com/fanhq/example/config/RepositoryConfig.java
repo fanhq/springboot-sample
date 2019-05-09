@@ -31,7 +31,7 @@ import javax.sql.DataSource;
         // 事务管理bean名称
         transactionManagerRef = "primaryTransactionManager"
 )
-public class JpaConfig {
+public class RepositoryConfig {
 
     @Autowired
     private DataSource dataSource;
