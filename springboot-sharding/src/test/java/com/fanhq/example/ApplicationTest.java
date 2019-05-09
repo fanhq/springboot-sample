@@ -1,5 +1,6 @@
 package com.fanhq.example;
 
+import com.fanhq.example.repository.OrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,17 @@ public class ApplicationTest {
     @Autowired
     private DataSource dataSource;
 
+    @Autowired
+    private OrderRepository orderRepository;
+
     @Test
     public void baseTest() {
         assert dataSource != null;
+    }
+
+    @Test
+    public void orderTest(){
+
     }
 
 }
