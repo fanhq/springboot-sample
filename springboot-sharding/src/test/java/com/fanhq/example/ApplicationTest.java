@@ -35,7 +35,7 @@ public class ApplicationTest {
         for (long i = 1; i <= 40L; i++) {
             OrderEntity order = new OrderEntity();
             order.setId((i));
-            order.setUserId(i + 1);
+            order.setUserId(i);
             order.setStatus("ordered");
             orderRepository.save(order);
         }
