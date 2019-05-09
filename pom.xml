@@ -7,6 +7,7 @@
         <module>security-rest-api</module>
         <module>springboot-grpc</module>
         <module>springboot-mybatis-plus</module>
+        <module>springboot-sharding</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
