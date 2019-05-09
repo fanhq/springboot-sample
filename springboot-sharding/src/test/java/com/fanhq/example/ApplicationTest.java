@@ -1,16 +1,12 @@
 package com.fanhq.example;
 
-import com.fanhq.example.entity.GoodsEntity;
-import com.fanhq.example.repository.GoodsRepository;
-import org.apache.commons.collections4.CollectionUtils;
+import com.fanhq.example.entity.OrderEntity;
+import com.fanhq.example.repository.OrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author fanhaiqiu
@@ -22,47 +18,19 @@ public class ApplicationTest {
 
 
     @Autowired
-    private GoodsRepository goodsRepository;
+    private OrderRepository orderRepository;
 
 
     @Test
     public void orderTest() {
         for (long i = 1; i <= 40L; i++) {
-            GoodsEntity goods = new GoodsEntity();
-            goods.setId((i));
-            goods.setName("shopping" + i);
-            goods.setType(i + 1);
-            goodsRepository.save(goods);
+            OrderEntity order = new OrderEntity();
+            order.setId((i));
+            order.setStatus("order" + i);
+            order.setUserId(i + 1);
+            orderRepository.save(order);
         }
         assert true;
-    }
-
-    @Test
-    public void select() {
-        List<GoodsEntity> goods = goodsRepository.findAll();
-        assert CollectionUtils.isEmpty(goods);
-    }
-
-    @Test
-    public void delete() {
-        goodsRepository.deleteAll();
-    }
-
-    @Test
-    public void query1() {
-        List<GoodsEntity> goods = goodsRepository.findAllByIdBetween(10L, 30L);
-        assert CollectionUtils.isEmpty(goods);
-    }
-
-    @Test
-    public void query2() {
-        List<Long> goodsIds = new ArrayList<>();
-        goodsIds.add(10L);
-        goodsIds.add(15L);
-        goodsIds.add(20L);
-        goodsIds.add(25L);
-        List<GoodsEntity> goods = goodsRepository.findAllByIdIn(goodsIds);
-        assert CollectionUtils.isEmpty(goods);
     }
 
 }
