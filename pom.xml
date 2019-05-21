@@ -8,6 +8,7 @@
         <module>springboot-grpc</module>
         <module>springboot-mybatis-plus</module>
         <module>springboot-sharding</module>
+        <module>springboot-elasticsearch</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
