@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/5/23
  */
 @RestController
-@RequestMapping("api")
-public class RequestController {
+@RequestMapping("open/api")
+public class OpenController {
 
     @RequestMapping("index")
     public String index(){

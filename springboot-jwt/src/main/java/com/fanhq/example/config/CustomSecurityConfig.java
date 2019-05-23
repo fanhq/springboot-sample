@@ -53,8 +53,6 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/open/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
