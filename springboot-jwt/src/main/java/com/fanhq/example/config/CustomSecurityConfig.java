@@ -13,6 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * @author fanhaiqiu
@@ -32,6 +33,9 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     public CustomSecurityConfig() {
         super();
@@ -62,6 +66,7 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .logout();
+        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.fanhq.example.config;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -12,6 +13,8 @@ import java.io.IOException;
  * @author fanhaiqiu
  * @date 2019/5/23
  */
+
+@Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Override
