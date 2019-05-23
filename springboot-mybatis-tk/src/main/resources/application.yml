@@ -8,7 +8,7 @@ spring:
       minimum-idle: 0
 
 mybatis:
-  type-aliases-package: tk.mybatis.springboot.model
+  type-aliases-package: com.fanhq.example.model
   mapper-locations: classpath:mapper/*.xml
 
 mapper:

@@ -7,6 +7,18 @@ spring:
     hikari:
       minimum-idle: 0
 
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  typeAliasesPackage: com.fanhq.example.entity
+mybatis:
+  type-aliases-package: com.fanhq.example.model
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.BaseMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
