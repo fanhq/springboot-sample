@@ -37,9 +37,9 @@ public class MabatisPlusGenerator {
         gc.setAuthor("fanhaiqiu");
         gc.setMapperName("%sMapper");
         gc.setXmlName("%sMapper");
-//        gc.setServiceName("%sService");
-//        gc.setServiceImplName("%sServiceImpl");
-//        gc.setControllerName("%sController");
+        gc.setServiceName("%sService");
+        gc.setServiceImplName("%sServiceImpl");
+        gc.setControllerName("%sController");
 
         StrategyConfig strategy = new StrategyConfig();
         // 此处可以修改为您的表前缀
