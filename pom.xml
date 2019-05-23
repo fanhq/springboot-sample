@@ -9,6 +9,7 @@
         <module>springboot-mybatis-plus</module>
         <module>springboot-sharding</module>
         <module>springboot-elasticsearch</module>
+        <module>springboot-jwt</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
