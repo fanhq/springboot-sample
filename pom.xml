@@ -10,6 +10,7 @@
         <module>springboot-sharding</module>
         <module>springboot-elasticsearch</module>
         <module>springboot-mybatis-tk</module>
+        <module>springboot-oauth2-jwt</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
