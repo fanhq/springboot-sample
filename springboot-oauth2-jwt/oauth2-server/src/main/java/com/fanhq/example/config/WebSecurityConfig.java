@@ -21,8 +21,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-    @Override
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     @Bean
+    @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
@@ -31,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void globalUserDetails(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder().encode("iot@10086"))
+                .withUser("admin").password(passwordEncoder.encode("iot@10086"))
                 .roles("USER").and();
     }
 
@@ -48,8 +51,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout();
     }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
 }

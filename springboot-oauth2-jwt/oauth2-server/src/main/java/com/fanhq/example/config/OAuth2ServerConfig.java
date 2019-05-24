@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -20,7 +21,10 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 @EnableAuthorizationServer
-public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
+public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Qualifier("authenticationManagerBean")
     @Autowired
@@ -44,10 +48,10 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
         configurer
                 .inMemory()
                 .withClient("client_id_1")
-                .secret("iot@10086")
+                .secret(passwordEncoder.encode("iot@10086"))
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
                 .scopes("read", "write")
-                .redirectUris("https://www.baidu.com")
+                .redirectUris("https://www.baidu.com", "http://127.0.0.1/api/")
                 .accessTokenValiditySeconds(3600)
                 .refreshTokenValiditySeconds(2592000);
     }
