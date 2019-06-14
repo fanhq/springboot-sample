@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -42,7 +42,8 @@ public class UserServiceImplTest {
     @Test
     public void wraperTest(){
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.gt("create_time", new Date(System.currentTimeMillis()));
+
+        queryWrapper.gt("create_time", new Timestamp(System.currentTimeMillis()));
         List<User> users = userMapper.selectList(queryWrapper);
         System.out.println(users.size());
     }
