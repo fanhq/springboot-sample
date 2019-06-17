@@ -1,3 +1,4 @@
+### 数据库初始化脚本参考 spring-batch-core下的schema-mysql.sql
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
