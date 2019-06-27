@@ -12,6 +12,7 @@
         <module>springboot-mybatis-tk</module>
         <module>springboot-oauth2-jwt</module>
         <module>springboot-batch</module>
+        <module>springboot-scaffold</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>

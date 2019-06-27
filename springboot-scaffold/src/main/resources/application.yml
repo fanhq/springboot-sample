@@ -1,0 +1,20 @@
+server:
+  port: 50053
+  servlet:
+    context-path: /srv/
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/intelligent_home?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: fanhaiqiu
+    password: mysql
+
+  tomcat:
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
