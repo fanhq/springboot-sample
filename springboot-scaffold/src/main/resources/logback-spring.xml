@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property name="LOG_PATH" value="/data/logs" />
-    <property name="LOG_FILE_NAME" value="intelligent_home" />
+    <property name="LOG_FILE_NAME" value="example" />
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
