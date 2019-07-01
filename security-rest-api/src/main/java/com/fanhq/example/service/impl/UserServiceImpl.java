@@ -24,7 +24,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<Role> getRoles(int userId) {
+    public List<Role> getRoles(Integer userId) {
         Role role = new Role();
         role.setRoleName("USER");
         List<Role> roles = new ArrayList<>();
@@ -33,7 +33,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<Authority> getAuthorities(int roleId) {
+    public List<Authority> getAuthorities(Integer roleId) {
         Authority auth = new Authority();
         auth.setAuthorityName("QUERY");
         List<Authority> authorities = new ArrayList<>();

@@ -25,12 +25,12 @@ public interface IUserService {
      * @param userId
      * @return
      */
-    List<Role> getRoles(int userId);
+    List<Role> getRoles(Integer userId);
 
     /**
      * 查询用户权限
      * @param roleId
      * @return
      */
-    List<Authority> getAuthorities(int roleId);
+    List<Authority> getAuthorities(Integer roleId);
 }
