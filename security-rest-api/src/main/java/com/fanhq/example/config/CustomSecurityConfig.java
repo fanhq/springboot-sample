@@ -64,6 +64,13 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .logout();
+
+//        http.csrf().disable();
+//        http.sessionManagement().disable();
+//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+//        http.cors().disable();
+//        http.x509().disable();
+//        http.addFilterBefore(customAuthenticationFilter, FilterSecurityInterceptor.class);
     }
 
     @Override
