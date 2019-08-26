@@ -26,6 +26,9 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationFilter customAuthenticationFilter;
 
+    @Autowired
+    private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
@@ -34,6 +37,7 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().disable();
         http.x509().disable();
         http.addFilterBefore(customAuthenticationFilter, FilterSecurityInterceptor.class);
+        http.exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint);
     }
 
     @Override

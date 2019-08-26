@@ -40,7 +40,7 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String tokenValue = request.getHeader(ACCESS_TOKEN);
-        if (antMatcher(request) || checkToken(request, tokenValue)) {
+        if (antMatcher(request) || checkToken(tokenValue)) {
             filterChain.doFilter(request, response);
             return;
         }
@@ -57,10 +57,10 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
     /**
      * token校验
      *
-     * @param request
+     * @param tokenValue
      * @return
      */
-    private boolean checkToken(HttpServletRequest request, String tokenValue) {
+    private boolean checkToken(String tokenValue) {
         LOGGER.info("【begin check token】:{}", tokenValue);
         if (StringUtils.isEmpty(tokenValue)) {
             return false;

@@ -1,5 +1,6 @@
 package com.fanhq.example.entity;
 
+import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -12,6 +13,7 @@ import javax.persistence.*;
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
+@Data
 public abstract class BaseEntity {
 
     @Id
@@ -21,33 +23,10 @@ public abstract class BaseEntity {
 
     @Column(name = "create_time")
     @CreatedDate
-    private long createTime;
+    private Long createTime;
 
     @Column(name = "update_time")
     @LastModifiedDate
-    private long updateTime;
+    private Long updateTime;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(long createTime) {
-        this.createTime = createTime;
-    }
-
-    public long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(long updateTime) {
-        this.updateTime = updateTime;
-    }
 }
