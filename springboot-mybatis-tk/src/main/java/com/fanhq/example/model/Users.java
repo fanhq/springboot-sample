@@ -1,6 +1,7 @@
 package com.fanhq.example.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 public class Users {
     /**
@@ -26,6 +27,8 @@ public class Users {
     private String email;
 
     private String password;
+
+    private Date createTime;
 
     /**
      * 获取主键ID
@@ -111,5 +114,13 @@ public class Users {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
